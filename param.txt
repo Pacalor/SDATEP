@@ -1,0 +1,42 @@
+# THIS IS A PARAMETER FILE FOR THE STREAM-MOEA ALGORITHM
+#This a comment. Comments starts with a '#' sign.
+algorithm = stream-moea
+
+# The input data, it must be a stream stored in an arff file. Others kinds of streams should be added in next versions.
+inputData = taxis.arff
+
+# The paths of the results files, separated by whitespaces, in this order: training QMs, test QMs for each rule, test QMs summary and rules.
+outputData = taxis_tra_qua.txt    taxis_tst_qua.txt     taxis_quaSumm.txt     taxis_rules.txt
+
+# The number of collected instances before starting the genetic algorithm.
+period = 2500
+
+# Parameters of the genetic algorithm
+seed = 1
+RulesRepresentation = dnf
+nLabels = 7
+nGen = 70
+popLength = 50
+crossProb = 0.8
+mutProb = 0.1
+
+
+# Use this to set the evaluator: "byObjectives" uses presence and objective values in previous timestamps. Other value use only presence in previous steps.
+# Use: "byDiversity" to apply the evaluator based in the application of the decay factor on the diversity measure
+Evaluator = byDiversity
+
+# The size of the sliding window to be used by the evaluator.
+SlidingWindowSize = 5
+
+# The objectives to be used in the genetic algorithm.
+# They must match with the name of the class that represent the quality measure
+Obj1 = WRAccNorm
+Obj2 = SuppDiff
+Obj3 = NULL
+
+# The diversity measure to be used. Useful for process like Token Competition.
+diversity = WRAccNorm
+
+# The different filter applied at the end of the evolutionary process. It will be applied in 
+# order, i.e., the first one is applied over the result, then the second is applied over the result extra-dnf-7-2500cted from the first one and so on.
+filter = TokenCompetition

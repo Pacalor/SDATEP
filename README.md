@@ -4,7 +4,7 @@ AI algotrithm to Analisys data from Smartbands, efficient and lightweight enough
 
 
 
-# This proyect is a fork from FEPDS: A Proposal for the Extraction of Fuzzy Emerging Patterns in Data Streams
+# This proyect is a fork from [FEPDS: A Proposal for the Extraction of Fuzzy Emerging Patterns in Data Streams](https://github.com/SIMIDAT/FEPDS)
 
 In this repository the source code of the FEPDS algorithm is presented. Please cite this work as:
 
